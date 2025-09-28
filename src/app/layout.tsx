@@ -156,8 +156,8 @@ export default function RootLayout({
             {/* Minimal mobile header actions + menu */}
             <div className="sm:hidden flex items-center gap-2 text-sm">
               <details className="relative">
-                <summary className="rounded-full border px-3 py-1 cursor-pointer select-none">Menu</summary>
-                <div className="absolute right-0 mt-2 w-[80vw] max-w-xs rounded-lg border bg-[var(--card)] p-4 shadow-lg z-50">
+                <summary className="rounded-full border px-3 py-1 cursor-pointer select-none" aria-label="Open menu" aria-haspopup="menu" aria-controls="mobile-menu">Menu</summary>
+                <div id="mobile-menu" className="absolute right-0 mt-2 w-[80vw] max-w-xs rounded-lg border bg-[var(--card)] p-4 shadow-lg z-50">
                   <nav className="grid gap-2 text-[var(--muted-foreground)]">
                     <Link href="/services" className="hover:underline">Services</Link>
                     <Link href="/vendors-partners" className="hover:underline">Vendors & Partners</Link>

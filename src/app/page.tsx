@@ -18,9 +18,9 @@ export default function Home({ searchParams }: {searchParams?: {lang?: string;};
   const lang = searchParams?.lang || "en";
   const tagline =
   lang === "te" ?
-  "చివరి ప్రయాణంలో గౌరవం — ప్రతి మతం, ప్రతి సంప్రదాయం." :
+  "అన్ని మతాలు, అన్ని కుటుంబాలు\nప్రేమతో." :
   lang === "hi" ?
-  "अंतिम यात्रा में गरिमा — हर धर्म, हर परंपरा के साथ।" :
+  "हर धर्म, हर परिवार\nप्यार के साथ।" :
   "Across Faiths, Across Families\nWith Love.";
 
   const t = {
