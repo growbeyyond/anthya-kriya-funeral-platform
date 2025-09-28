@@ -130,7 +130,7 @@ export default function RootLayout({
               />
               <span>Anthya Kriya</span>
             </Link>
-            <nav className="hidden sm:flex items-center gap-4 text-sm text-[color:oklch(0.28_0.08_20_/_85%)]">
+            <nav className="hidden sm:flex items-center gap-4 text-sm text-[var(--muted-foreground)]">
               <Link href="/services" className="hover:underline">Services</Link>
               <Link href="/vendors-partners" className="hover:underline">Vendors & Partners</Link>
               <Link href="/about" className="hover:underline">About</Link>
@@ -153,8 +153,33 @@ export default function RootLayout({
                 <Link className="hover:underline" href="?lang=hi">HI</Link>
               </div>
             </nav>
-            {/* Minimal mobile header actions */}
+            {/* Minimal mobile header actions + menu */}
             <div className="sm:hidden flex items-center gap-2 text-sm">
+              <details className="relative">
+                <summary className="rounded-full border px-3 py-1 cursor-pointer select-none">Menu</summary>
+                <div className="absolute right-0 mt-2 w-[80vw] max-w-xs rounded-lg border bg-[var(--card)] p-4 shadow-lg">
+                  <nav className="grid gap-2 text-[var(--muted-foreground)]">
+                    <Link href="/services" className="hover:underline">Services</Link>
+                    <Link href="/vendors-partners" className="hover:underline">Vendors & Partners</Link>
+                    <Link href="/about" className="hover:underline">About</Link>
+                    <Link href="/contact" className="hover:underline">Contact</Link>
+                    <Link href="/csr" className="hover:underline">CSR</Link>
+                    <Link href="/legal" className="hover:underline">Legal</Link>
+                    <div className="pt-2 border-t mt-2" />
+                    <div className="flex items-center gap-3" aria-label="Language selector">
+                      <Link className="hover:underline" href="?lang=en">EN</Link>
+                      <Link className="hover:underline" href="?lang=te">TE</Link>
+                      <Link className="hover:underline" href="?lang=hi">HI</Link>
+                    </div>
+                    <Link
+                      href="/csr"
+                      className="mt-2 inline-flex items-center justify-center rounded-md bg-[var(--accent)] px-3 py-2 text-[var(--accent-foreground)]"
+                    >
+                      Donate / Partner
+                    </Link>
+                  </nav>
+                </div>
+              </details>
               <a href="tel:+918886435558" className="rounded-full border px-3 py-1">Call</a>
               <a
                 href="https://wa.me/918886435558?text=Hello%20Anthya%20Kriya%2C%20I%20need%20assistance"
@@ -182,13 +207,13 @@ export default function RootLayout({
                 />
                 <span>Anthya Kriya</span>
               </div>
-              <p className="mt-2 text-[color:oklch(0.28_0.08_20_/_75%)]">
+              <p className="mt-2 text-[var(--muted-foreground)]">
                 24/7 Hotline: <a className="underline" href="tel:+918886435558">+91 8886435558</a>
               </p>
             </div>
             <div>
               <div className="font-medium">Explore</div>
-              <ul className="mt-2 space-y-1 text-[color:oklch(0.28_0.08_20_/_80%)]">
+              <ul className="mt-2 space-y-1 text-[var(--muted-foreground)]">
                 <li><Link className="hover:underline" href="/services">Services</Link></li>
                 <li><Link className="hover:underline" href="/vendors-partners">Vendors & Partners</Link></li>
                 <li><Link className="hover:underline" href="/csr">CSR</Link></li>
@@ -198,7 +223,7 @@ export default function RootLayout({
             </div>
             <div>
               <div className="font-medium">Company</div>
-              <ul className="mt-2 space-y-1 text-[color:oklch(0.28_0.08_20_/_80%)]">
+              <ul className="mt-2 space-y-1 text-[var(--muted-foreground)]">
                 <li><Link className="hover:underline" href="/terms">Terms</Link></li>
                 <li><Link className="hover:underline" href="/privacy">Privacy</Link></li>
                 <li><Link className="hover:underline" href="/legal">Legal</Link></li>
@@ -206,7 +231,7 @@ export default function RootLayout({
             </div>
             <div>
               <div className="font-medium">Language</div>
-              <div className="mt-2 flex items-center gap-3 text-[color:oklch(0.28_0.08_20_/_80%)]">
+              <div className="mt-2 flex items-center gap-3 text-[var(--muted-foreground)]">
                 <Link className="hover:underline" href="?lang=en">English</Link>
                 <Link className="hover:underline" href="?lang=te">తెలుగు</Link>
                 <Link className="hover:underline" href="?lang=hi">हिन्दी</Link>
@@ -214,7 +239,7 @@ export default function RootLayout({
             </div>
           </div>
           <div className="border-t">
-            <div className="mx-auto max-w-6xl px-6 py-4 text-xs text-[color:oklch(0.28_0.08_20_/_65%)] flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2">
+            <div className="mx-auto max-w-6xl px-6 py-4 text-xs text-[var(--muted-foreground)] flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2">
               <span>© {new Date().getFullYear()} Anthya Kriya. All rights reserved.</span>
               <span>Made with dignity and care.</span>
             </div>
