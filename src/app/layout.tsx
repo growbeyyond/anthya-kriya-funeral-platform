@@ -117,7 +117,7 @@ export default function RootLayout({
           data-custom-data='{"appName": "YourApp", "version": "1.0.0", "greeting": "hi"}'
         />
         {/* Top navigation */}
-        <header className="z-40 border-b bg-[var(--card)]/90 backdrop-blur supports-[backdrop-filter]:bg-[var(--card)]/70">
+        <header className="z-40 border-b bg-[var(--card)]/90 backdrop-blur supports-[backdrop-filter]:bg-[var(--card)]/70 overflow-visible">
           <div className="mx-auto max-w-6xl px-6 h-14 flex items-center justify-between">
             <Link href="/" className="flex items-center gap-2 font-semibold text-[var(--primary)]">
               <Image
@@ -154,11 +154,11 @@ export default function RootLayout({
               </div>
             </nav>
             {/* Minimal mobile header actions + menu */}
-            <div className="sm:hidden flex items-center gap-2 text-sm">
+            <div className="md:hidden flex items-center gap-2 text-sm">
               <details className="relative">
                 <summary className="rounded-full border px-3 py-1 cursor-pointer select-none" aria-label="Open menu" aria-haspopup="menu" aria-controls="mobile-menu">Menu</summary>
-                <div id="mobile-menu" className="absolute right-0 mt-2 w-[86vw] max-w-sm rounded-lg border bg-[var(--card)] p-4 shadow-lg z-50 max-h-[70vh] overflow-y-auto">
-                  <nav className="grid gap-2 text-[var(--muted-foreground)]">
+                <div id="mobile-menu" className="fixed inset-x-2 top-16 bottom-2 rounded-lg border bg-[var(--card)] p-4 shadow-lg z-[200] overflow-y-auto">
+                  <nav className="grid gap-2 text-[var(--foreground)]">
                     {/* Primary actions */}
                     <Link href="/emergency-booking" className="inline-flex items-center justify-center rounded-md bg-[var(--accent)] text-[var(--accent-foreground)] px-3 py-2">🚑 Emergency Booking</Link>
                     <Link href="/plan-ahead" className="rounded-md border px-3 py-2">Plan Ahead</Link>
