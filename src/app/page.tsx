@@ -21,7 +21,7 @@ export default function Home({ searchParams }: {searchParams?: {lang?: string;};
   "చివరి ప్రయాణంలో గౌరవం — ప్రతి మతం, ప్రతి సంప్రదాయం." :
   lang === "hi" ?
   "अंतिम यात्रा में गरिमा — हर धर्म, हर परंपरा के साथ।" :
-  "Across Faiths, Across Families, With Love.";
+  "Across Faiths, Across Families";
 
   const t = {
     services: lang === "te" ? "సేవలు" : lang === "hi" ? "सेवाएँ" : "Services",
@@ -93,7 +93,7 @@ export default function Home({ searchParams }: {searchParams?: {lang?: string;};
                 </div>
               </div>
 
-              <h1 className="mt-8 text-4xl sm:text-5xl md:text-6xl font-semibold tracking-tight animate-in fade-in-50 duration-700 !whitespace-pre-line">
+              <h1 className="mt-8 text-4xl sm:text-5xl md:text-6xl font-semibold tracking-tight animate-in fade-in-50 duration-700 !whitespace-pre-line !whitespace-pre-line">
                 {tagline}
               </h1>
               <div className="mt-3 flex items-center justify-center">
