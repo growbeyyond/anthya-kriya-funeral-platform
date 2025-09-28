@@ -120,6 +120,7 @@ export default function RootLayout({
         {/* Top navigation */}
         <header className="z-40 border-b bg-[var(--card)]/90 backdrop-blur supports-[backdrop-filter]:bg-[var(--card)]/70 overflow-visible">
           <div className="mx-auto max-w-6xl px-6 h-14 flex items-center justify-between">
+            <MobileMenu />
             <Link href="/" className="flex items-center gap-2 font-semibold text-[var(--primary)]">
               <Image
                 src="https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/document-uploads/ChatGPT%20Image%20Sep%2026,%202025,%2008_53_56%20PM-1758900244242.png"
@@ -155,7 +156,7 @@ export default function RootLayout({
               </div>
             </nav>
             {/* Minimal mobile header actions + menu */}
-            <MobileMenu />
+            {/* moved MobileMenu to left corner */}
           </div>
         </header>
         {children}

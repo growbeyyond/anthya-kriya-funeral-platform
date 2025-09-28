@@ -53,13 +53,13 @@ export const MobileMenu = () => {
           aria-hidden
           tabIndex={-1}
           onClick={close}
-          className="fixed inset-0 z-[180] bg-black/20"
+          className="fixed inset-0 z-[180] bg-black/20 animate-in fade-in-50"
         />
       ) : null}
 
       {/* Panel */}
       {open ? (
-        <div className="fixed inset-x-2 top-16 bottom-2 rounded-lg border bg-[var(--card)] p-4 shadow-lg z-[200] overflow-y-auto">
+        <div className="fixed inset-x-2 top-16 bottom-2 rounded-lg border bg-[var(--card)] p-4 shadow-lg z-[200] overflow-y-auto animate-in slide-in-from-top-2 fade-in-50 duration-200">
           <nav className="grid gap-2 text-[var(--foreground)]" onClick={close}>
             {/* Primary actions */}
             <Link href="/emergency-booking" className="inline-flex items-center justify-center rounded-md bg-[var(--accent)] text-[var(--accent-foreground)] px-3 py-2">🚑 Emergency Booking</Link>
