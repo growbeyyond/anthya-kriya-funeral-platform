@@ -157,26 +157,50 @@ export default function RootLayout({
             <div className="sm:hidden flex items-center gap-2 text-sm">
               <details className="relative">
                 <summary className="rounded-full border px-3 py-1 cursor-pointer select-none" aria-label="Open menu" aria-haspopup="menu" aria-controls="mobile-menu">Menu</summary>
-                <div id="mobile-menu" className="absolute right-0 mt-2 w-[80vw] max-w-xs rounded-lg border bg-[var(--card)] p-4 shadow-lg z-50">
+                <div id="mobile-menu" className="absolute right-0 mt-2 w-[86vw] max-w-sm rounded-lg border bg-[var(--card)] p-4 shadow-lg z-50 max-h-[70vh] overflow-y-auto">
                   <nav className="grid gap-2 text-[var(--muted-foreground)]">
+                    {/* Primary actions */}
+                    <Link href="/emergency-booking" className="inline-flex items-center justify-center rounded-md bg-[var(--accent)] text-[var(--accent-foreground)] px-3 py-2">🚑 Emergency Booking</Link>
+                    <Link href="/plan-ahead" className="rounded-md border px-3 py-2">Plan Ahead</Link>
+                    <Link href="/multi-faith-rituals" className="rounded-md border px-3 py-2">Multi‑faith Rituals</Link>
+                    <Link href="/memorials" className="rounded-md border px-3 py-2">Memorials</Link>
+                    <Link href="/memorials/new" className="rounded-md border px-3 py-2">Create Memorial</Link>
+
+                    <div className="pt-2 border-t mt-2" />
+
+                    {/* Explore / informational */}
                     <Link href="/services" className="hover:underline">Services</Link>
                     <Link href="/vendors-partners" className="hover:underline">Vendors & Partners</Link>
+                    <Link href="/partner" className="hover:underline">Partner with Us</Link>
+                    <Link href="/vendor" className="hover:underline">Vendor Portal</Link>
+                    <Link href="/vendor/onboarding" className="hover:underline">Vendor Onboarding</Link>
+                    <Link href="/vendor/jobs" className="hover:underline">Vendor Jobs</Link>
+                    <Link href="/vendor/wallet" className="hover:underline">Vendor Wallet</Link>
                     <Link href="/about" className="hover:underline">About</Link>
                     <Link href="/contact" className="hover:underline">Contact</Link>
                     <Link href="/csr" className="hover:underline">CSR</Link>
-                    <Link href="/legal" className="hover:underline">Legal</Link>
+
                     <div className="pt-2 border-t mt-2" />
+
+                    {/* Auth */}
+                    <Link href="/login" className="hover:underline">Login</Link>
+                    <Link href="/register" className="hover:underline">Register</Link>
+
+                    <div className="pt-2 border-t mt-2" />
+
+                    {/* Policies */}
+                    <Link href="/legal" className="hover:underline">Legal</Link>
+                    <Link href="/terms" className="hover:underline">Terms</Link>
+                    <Link href="/privacy" className="hover:underline">Privacy</Link>
+
+                    <div className="pt-2 border-t mt-2" />
+
+                    {/* Language selector */}
                     <div className="flex items-center gap-3" aria-label="Language selector">
                       <Link className="hover:underline" href="?lang=en">EN</Link>
                       <Link className="hover:underline" href="?lang=te">TE</Link>
                       <Link className="hover:underline" href="?lang=hi">HI</Link>
                     </div>
-                    <Link
-                      href="/csr"
-                      className="mt-2 inline-flex items-center justify-center rounded-md bg-[var(--accent)] px-3 py-2 text-[var(--accent-foreground)]"
-                    >
-                      Donate / Partner
-                    </Link>
                   </nav>
                 </div>
               </details>
