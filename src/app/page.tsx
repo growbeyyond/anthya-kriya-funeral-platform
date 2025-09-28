@@ -63,7 +63,7 @@ export default function Home({ searchParams }: {searchParams?: {lang?: string;};
           style={{ filter: "grayscale(30%)" }}
           unoptimized />
 
-        <div className="absolute inset-0 opacity-70"
+        <div className="absolute inset-0 opacity-70 pointer-events-none"
         style={{
           background:
           "radial-gradient(120% 80% at 50% 20%, color-mix(in oklch, var(--primary) 16%, transparent) 0%, transparent 55%, color-mix(in oklch, var(--primary) 28%, transparent) 100%)",
@@ -78,16 +78,16 @@ export default function Home({ searchParams }: {searchParams?: {lang?: string;};
             }}>
 
             <div className="mx-auto max-w-6xl px-6 py-16 sm:py-24 text-center text-white">
-              <div className="flex items-center justify-between gap-4 text-sm opacity-95">
+              <div className="flex flex-col sm:flex-row items-center justify-between gap-2 sm:gap-4 text-sm opacity-95">
                 <p className="inline-flex items-center gap-2">
                   <Phone className="size-4" aria-hidden />
                   24/7 Hotline: <a className="underline" href="tel:+918886435558">+91 8886435558</a>
                 </p>
                 <div className="inline-flex items-center gap-2">
                   <div className="flex items-center gap-2 rounded-full border border-white/30 bg-white/10 px-2 py-1 text-white backdrop-blur-md">
-                    <Link href="?lang=en" className={`px-2 py-0.5 rounded-full ${lang === "en" ? "bg-white/20" : "hover:bg-white/10"}`}>EN</Link>
-                    <Link href="?lang=te" className={`px-2 py-0.5 rounded-full ${lang === "te" ? "bg-white/20" : "hover:bg-white/10"}`}>TE</Link>
-                    <Link href="?lang=hi" className={`px-2 py-0.5 rounded-full ${lang === "hi" ? "bg-white/20" : "hover:bg-white/10"}`}>HI</Link>
+                    <Link href="?lang=en" className={`${lang === "en" ? "bg-white/20" : "hover:bg-white/10"} px-2 py-0.5 rounded-full`}>EN</Link>
+                    <Link href="?lang=te" className={`${lang === "te" ? "bg-white/20" : "hover:bg-white/10"} px-2 py-0.5 rounded-full`}>TE</Link>
+                    <Link href="?lang=hi" className={`${lang === "hi" ? "bg-white/20" : "hover:bg-white/10"} px-2 py-0.5 rounded-full`}>HI</Link>
                   </div>
                   <ThemeToggle />
                 </div>
@@ -221,22 +221,22 @@ export default function Home({ searchParams }: {searchParams?: {lang?: string;};
           unoptimized />
 
         <Reveal as="div" className="mt-6 flex gap-4 overflow-x-auto snap-x snap-mandatory md:grid md:grid-cols-4 md:gap-6 md:overflow-visible">
-          <div id="emergency" className="min-w-[85%] snap-start md:min-w-0 rounded-xl border p-6 bg-[var(--card)]">
+          <div id="emergency" className="min-w-[85%] snap-start md:min-w-0 rounded-xl border p-6 bg-[var(--card)] scroll-mt-24">
             <h3 className="font-medium inline-flex items-center gap-2"><Ambulance className="size-4" aria-hidden /> Emergency Coordination</h3>
             <p className="mt-2 text-sm text-[var(--muted-foreground)]">Ambulance, documentation, cremation/burial slots.</p>
             <Button asChild size="sm" className="mt-3"><Link href="/emergency-booking" className="inline-flex items-center gap-2">Book Emergency <ArrowRight className="size-4" aria-hidden /></Link></Button>
           </div>
-          <div id="rituals" className="min-w-[85%] snap-start md:min-w-0 rounded-xl border p-6 bg-[var(--card)]">
+          <div id="rituals" className="min-w-[85%] snap-start md:min-w-0 rounded-xl border p-6 bg-[var(--card)] scroll-mt-24">
             <h3 className="font-medium inline-flex items-center gap-2"><BookOpen className="size-4" aria-hidden /> Multi-faith Rituals</h3>
             <p className="mt-2 text-sm text-[var(--muted-foreground)]">Authentic rites with certified officiants.</p>
             <Button asChild size="sm" variant="secondary" className="mt-3 transition-transform duration-200 hover:scale-[1.02] active:scale-95"><Link href="/multi-faith-rituals" className="inline-flex items-center gap-2">Learn More <ArrowRight className="size-4" aria-hidden /></Link></Button>
           </div>
-          <div id="plan" className="min-w-[85%] snap-start md:min-w-0 rounded-xl border p-6 bg-[var(--card)]">
+          <div id="plan" className="min-w-[85%] snap-start md:min-w-0 rounded-xl border p-6 bg-[var(--card)] scroll-mt-24">
             <h3 className="font-medium inline-flex items-center gap-2"><Calendar className="size-4" aria-hidden /> Plan Ahead</h3>
             <p className="mt-2 text-sm text-[var(--muted-foreground)]">Document preferences for peace of mind.</p>
             <Button asChild size="sm" variant="secondary" className="mt-3 transition-transform duration-200 hover:scale-[1.02] active:scale-95"><Link href="/plan-ahead" className="inline-flex items-center gap-2">Learn More <ArrowRight className="size-4" aria-hidden /></Link></Button>
           </div>
-          <div id="memorials" className="min-w-[85%] snap-start md:min-w-0 rounded-xl border p-6 bg-[var(--card)]">
+          <div id="memorials" className="min-w-[85%] snap-start md:min-w-0 rounded-xl border p-6 bg-[var(--card)] scroll-mt-24">
             <h3 className="font-medium inline-flex items-center gap-2"><Flower className="size-4" aria-hidden /> Memorials</h3>
             <p className="mt-2 text-sm text-[var(--muted-foreground)]">Create online tributes and ceremony timelines.</p>
             <Button asChild size="sm" variant="secondary" className="mt-3 transition-transform duration-200 hover:scale-[1.02] active:scale-95"><Link href="/memorials" className="inline-flex items-center gap-2">Learn More <ArrowRight className="size-4" aria-hidden /></Link></Button>
@@ -244,32 +244,32 @@ export default function Home({ searchParams }: {searchParams?: {lang?: string;};
         </Reveal>
         {/* Expanded services */}
         <Reveal as="div" className="mt-6 grid gap-6 md:grid-cols-3">
-          <div id="legal" className="rounded-xl border p-6 bg-[var(--card)]">
+          <div id="legal" className="rounded-xl border p-6 bg-[var(--card)] scroll-mt-24">
             <h3 className="font-medium inline-flex items-center gap-2"><FileText className="size-4" aria-hidden /> Legal & Documentation</h3>
             <p className="mt-2 text-sm text-[var(--muted-foreground)]">Death certificate, permits, and formalities.</p>
             <Button asChild size="sm" variant="secondary" className="mt-3"><Link href="/legal" className="inline-flex items-center gap-2">Learn More <ArrowRight className="size-4" aria-hidden /></Link></Button>
           </div>
-          <div id="support" className="rounded-xl border p-6 bg-[var(--card)]">
+          <div id="support" className="rounded-xl border p-6 bg-[var(--card)] scroll-mt-24">
             <h3 className="font-medium inline-flex items-center gap-2"><HelpingHand className="size-4" aria-hidden /> Support & Counseling</h3>
             <p className="mt-2 text-sm text-[var(--muted-foreground)]">Grief resources and community support.</p>
             <Button asChild size="sm" variant="secondary" className="mt-3"><Link href="/contact?topic=support" className="inline-flex items-center gap-2">Learn More <ArrowRight className="size-4" aria-hidden /></Link></Button>
           </div>
-          <div id="nri" className="rounded-xl border p-6 bg-[var(--card)]">
+          <div id="nri" className="rounded-xl border p-6 bg-[var(--card)] scroll-mt-24">
             <h3 className="font-medium inline-flex items-center gap-2"><Globe className="size-4" aria-hidden /> Global / NRI</h3>
             <p className="mt-2 text-sm text-[var(--muted-foreground)]">Remote coordination and repatriation support.</p>
             <Button asChild size="sm" variant="secondary" className="mt-3"><Link href="/contact?topic=nri" className="inline-flex items-center gap-2">Learn More <ArrowRight className="size-4" aria-hidden /></Link></Button>
           </div>
-          <div id="eco" className="rounded-xl border p-6 bg-[var(--card)]">
+          <div id="eco" className="rounded-xl border p-6 bg-[var(--card)] scroll-mt-24">
             <h3 className="font-medium inline-flex items-center gap-2"><Leaf className="size-4" aria-hidden /> Eco‑Friendly Farewells</h3>
             <p className="mt-2 text-sm text-[var(--muted-foreground)]">Sustainable options and green materials.</p>
             <Button asChild size="sm" variant="secondary" className="mt-3"><Link href="/services#eco" className="inline-flex items-center gap-2">Learn More <ArrowRight className="size-4" aria-hidden /></Link></Button>
           </div>
-          <div id="kits" className="rounded-xl border p-6 bg-[var(--card)]">
+          <div id="kits" className="rounded-xl border p-6 bg-[var(--card)] scroll-mt-24">
             <h3 className="font-medium inline-flex items-center gap-2"><Package className="size-4" aria-hidden /> Ritual Kits & Merchandise</h3>
             <p className="mt-2 text-sm text-[var(--muted-foreground)]">Samagri kits and essentials by tradition.</p>
             <Button asChild size="sm" variant="secondary" className="mt-3"><Link href="/contact?topic=kits" className="inline-flex items-center gap-2">Learn More <ArrowRight className="size-4" aria-hidden /></Link></Button>
           </div>
-          <div id="csr" className="rounded-xl border p-6 bg-[var(--card)]">
+          <div id="csr" className="rounded-xl border p-6 bg-[var(--card)] scroll-mt-24">
             <h3 className="font-medium inline-flex items-center gap-2"><Building2 className="size-4" aria-hidden /> CSR & Social Impact</h3>
             <p className="mt-2 text-sm text-[var(--muted-foreground)]">Subsidized support via our foundation.</p>
             <Button asChild size="sm" variant="secondary" className="mt-3"><Link href="/csr" className="inline-flex items-center gap-2">Learn More <ArrowRight className="size-4" aria-hidden /></Link></Button>

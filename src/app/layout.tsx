@@ -117,7 +117,7 @@ export default function RootLayout({
           data-custom-data='{"appName": "YourApp", "version": "1.0.0", "greeting": "hi"}'
         />
         {/* Top navigation */}
-        <header className="border-b bg-[var(--card)]/90 backdrop-blur supports-[backdrop-filter]:bg-[var(--card)]/70">
+        <header className="z-40 border-b bg-[var(--card)]/90 backdrop-blur supports-[backdrop-filter]:bg-[var(--card)]/70">
           <div className="mx-auto max-w-6xl px-6 h-14 flex items-center justify-between">
             <Link href="/" className="flex items-center gap-2 font-semibold text-[var(--primary)]">
               <Image
@@ -157,7 +157,7 @@ export default function RootLayout({
             <div className="sm:hidden flex items-center gap-2 text-sm">
               <details className="relative">
                 <summary className="rounded-full border px-3 py-1 cursor-pointer select-none">Menu</summary>
-                <div className="absolute right-0 mt-2 w-[80vw] max-w-xs rounded-lg border bg-[var(--card)] p-4 shadow-lg">
+                <div className="absolute right-0 mt-2 w-[80vw] max-w-xs rounded-lg border bg-[var(--card)] p-4 shadow-lg z-50">
                   <nav className="grid gap-2 text-[var(--muted-foreground)]">
                     <Link href="/services" className="hover:underline">Services</Link>
                     <Link href="/vendors-partners" className="hover:underline">Vendors & Partners</Link>
