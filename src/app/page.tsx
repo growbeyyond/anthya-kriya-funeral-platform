@@ -93,7 +93,7 @@ export default function Home({ searchParams }: {searchParams?: {lang?: string;};
                 </div>
               </div>
 
-              <h1 className="mt-8 text-4xl sm:text-5xl md:text-6xl font-semibold tracking-tight animate-in fade-in-50 duration-700 !whitespace-pre-line !whitespace-pre-line">
+              <h1 className="mt-8 text-4xl sm:text-5xl md:text-6xl font-semibold tracking-tight leading-tight md:leading-[1.1] animate-in fade-in-50 duration-700 !whitespace-pre-line">
                 {tagline}
               </h1>
               <div className="mt-3 flex items-center justify-center">
