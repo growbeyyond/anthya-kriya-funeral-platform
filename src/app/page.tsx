@@ -99,7 +99,7 @@ export default function Home({ searchParams }: {searchParams?: {lang?: string;};
               <div className="mt-3 flex items-center justify-center">
                 <span className="inline-flex items-center gap-2 rounded-full bg-black/20 px-3 py-1 text-xs sm:text-sm text-white/90 ring-1 ring-white/20 animate-in fade-in-50 slide-in-from-bottom-2 duration-700">
                   <Sparkles className="size-3.5" aria-hidden />
-                  Now serving: Hyderabad (pilot) · More cities soon
+                  Now serving: Hyderabad (pilot) — More cities soon
                 </span>
               </div>
               <p className="mx-auto mt-4 max-w-2xl text-base sm:text-lg text-white/90 animate-in fade-in-50 slide-in-from-bottom-2 duration-700 delay-100">
