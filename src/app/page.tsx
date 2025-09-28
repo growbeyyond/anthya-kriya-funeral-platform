@@ -21,7 +21,7 @@ export default function Home({ searchParams }: {searchParams?: {lang?: string;};
   "చివరి ప్రయాణంలో గౌరవం — ప్రతి మతం, ప్రతి సంప్రదాయం." :
   lang === "hi" ?
   "अंतिम यात्रा में गरिमा — हर धर्म, हर परंपरा के साथ।" :
-  "Across Faiths, Across Families";
+  "Across Faiths, Across Families, With Love.";
 
   const t = {
     services: lang === "te" ? "సేవలు" : lang === "hi" ? "सेवाएँ" : "Services",
