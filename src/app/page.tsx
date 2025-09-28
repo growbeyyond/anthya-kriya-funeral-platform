@@ -7,6 +7,9 @@ import dynamic from "next/dynamic";
 import { Phone, MessageCircle, ArrowRight, Sparkles, Ambulance, BookOpen, Calendar, Flower, HandHeart, Scale, ShieldCheck, Globe, Leaf, Package, Building2, FileText, HelpingHand } from "lucide-react";
 import Script from "next/script";
 
+export const revalidate = 0; // disable full-route cache so updates appear immediately
+// export const dynamic = "force-dynamic"; // alternative option if needed later
+
 const TrustStrip = dynamic(() => import("@/components/trust/TrustStrip").then((m) => m.TrustStrip), {
   loading: () => <div className="h-12" />
 });
