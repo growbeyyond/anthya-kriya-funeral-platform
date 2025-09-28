@@ -108,17 +108,17 @@ export default function Home({ searchParams }: {searchParams?: {lang?: string;};
                 and compassionate support for families.
               </p>
 
-              <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
-                <Button asChild className="bg-[var(--accent)] text-[var(--accent-foreground)] hover:opacity-90 transition-transform duration-200 hover:scale-[1.02] active:scale-95">
+              <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3">
+                <Button asChild className="w-full sm:w-auto bg-[var(--accent)] text-[var(--accent-foreground)] hover:opacity-90 transition-transform duration-200 hover:scale-[1.02] active:scale-95">
                   <Link href="/emergency-booking" className="inline-flex items-center gap-2">Book Emergency Now <ArrowRight className="size-4" aria-hidden /></Link>
                 </Button>
-                <Button asChild variant="secondary" className="bg-white/10 border-white/30 text-white hover:bg-white/20 transition-transform duration-200 hover:scale-[1.02] active:scale-95">
+                <Button asChild variant="secondary" className="w-full sm:w-auto bg-white/10 border-white/30 text-white hover:bg-white/20 transition-transform duration-200 hover:scale-[1.02] active:scale-95">
                   <Link href="/plan-ahead" className="inline-flex items-center gap-2">Plan Ahead <ArrowRight className="size-4" aria-hidden /></Link>
                 </Button>
-                <Button asChild variant="secondary" className="bg-white/10 border-white/30 text-white hover:bg-white/20 transition-transform duration-200 hover:scale-[1.02] active:scale-95">
+                <Button asChild variant="secondary" className="w-full sm:w-auto bg-white/10 border-white/30 text-white hover:bg-white/20 transition-transform duration-200 hover:scale-[1.02] active:scale-95">
                   <Link href="/multi-faith-rituals" className="inline-flex items-center gap-2">Multi-faith Rituals <ArrowRight className="size-4" aria-hidden /></Link>
                 </Button>
-                <Button asChild variant="secondary" className="bg-white/10 border-white/30 text-white hover:bg-white/20 transition-transform duration-200 hover:scale-[1.02] active:scale-95">
+                <Button asChild variant="secondary" className="w-full sm:w-auto bg-white/10 border-white/30 text-white hover:bg-white/20 transition-transform duration-200 hover:scale-[1.02] active:scale-95">
                   <Link href="https://wa.me/918886435558?text=Hello%20Anthya%20Kriya%2C%20I%20need%20assistance" aria-label="WhatsApp support" className="inline-flex items-center gap-2"><MessageCircle className="size-4" aria-hidden /> WhatsApp</Link>
                 </Button>
               </div>
@@ -220,23 +220,23 @@ export default function Home({ searchParams }: {searchParams?: {lang?: string;};
           className="mt-4 w-full h-40 sm:h-56 object-cover rounded-xl border"
           unoptimized />
 
-        <Reveal as="div" className="mt-6 grid gap-6 md:grid-cols-4">
-          <div id="emergency" className="rounded-xl border p-6 bg-[var(--card)]">
+        <Reveal as="div" className="mt-6 flex gap-4 overflow-x-auto snap-x snap-mandatory md:grid md:grid-cols-4 md:gap-6 md:overflow-visible">
+          <div id="emergency" className="min-w-[85%] snap-start md:min-w-0 rounded-xl border p-6 bg-[var(--card)]">
             <h3 className="font-medium inline-flex items-center gap-2"><Ambulance className="size-4" aria-hidden /> Emergency Coordination</h3>
             <p className="mt-2 text-sm text-[var(--muted-foreground)]">Ambulance, documentation, cremation/burial slots.</p>
             <Button asChild size="sm" className="mt-3"><Link href="/emergency-booking" className="inline-flex items-center gap-2">Book Emergency <ArrowRight className="size-4" aria-hidden /></Link></Button>
           </div>
-          <div id="rituals" className="rounded-xl border p-6 bg-[var(--card)]">
+          <div id="rituals" className="min-w-[85%] snap-start md:min-w-0 rounded-xl border p-6 bg-[var(--card)]">
             <h3 className="font-medium inline-flex items-center gap-2"><BookOpen className="size-4" aria-hidden /> Multi-faith Rituals</h3>
             <p className="mt-2 text-sm text-[var(--muted-foreground)]">Authentic rites with certified officiants.</p>
             <Button asChild size="sm" variant="secondary" className="mt-3 transition-transform duration-200 hover:scale-[1.02] active:scale-95"><Link href="/multi-faith-rituals" className="inline-flex items-center gap-2">Learn More <ArrowRight className="size-4" aria-hidden /></Link></Button>
           </div>
-          <div id="plan" className="rounded-xl border p-6 bg-[var(--card)]">
+          <div id="plan" className="min-w-[85%] snap-start md:min-w-0 rounded-xl border p-6 bg-[var(--card)]">
             <h3 className="font-medium inline-flex items-center gap-2"><Calendar className="size-4" aria-hidden /> Plan Ahead</h3>
             <p className="mt-2 text-sm text-[var(--muted-foreground)]">Document preferences for peace of mind.</p>
             <Button asChild size="sm" variant="secondary" className="mt-3 transition-transform duration-200 hover:scale-[1.02] active:scale-95"><Link href="/plan-ahead" className="inline-flex items-center gap-2">Learn More <ArrowRight className="size-4" aria-hidden /></Link></Button>
           </div>
-          <div id="memorials" className="rounded-xl border p-6 bg-[var(--card)]">
+          <div id="memorials" className="min-w-[85%] snap-start md:min-w-0 rounded-xl border p-6 bg-[var(--card)]">
             <h3 className="font-medium inline-flex items-center gap-2"><Flower className="size-4" aria-hidden /> Memorials</h3>
             <p className="mt-2 text-sm text-[var(--muted-foreground)]">Create online tributes and ceremony timelines.</p>
             <Button asChild size="sm" variant="secondary" className="mt-3 transition-transform duration-200 hover:scale-[1.02] active:scale-95"><Link href="/memorials" className="inline-flex items-center gap-2">Learn More <ArrowRight className="size-4" aria-hidden /></Link></Button>

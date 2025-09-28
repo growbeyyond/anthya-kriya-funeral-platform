@@ -102,7 +102,7 @@ export default function RootLayout({
           </>
         ) : null}
       </head>
-      <body className="antialiased">
+      <body className="antialiased pb-16 sm:pb-0">
         {/* Skip link for accessibility */}
         <a href="#main-content" className="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-[100] focus:bg-[var(--accent)] focus:text-[var(--accent-foreground)] focus:px-3 focus:py-2 focus:rounded-md">Skip to main content</a>
         <ErrorReporter />
@@ -130,7 +130,7 @@ export default function RootLayout({
               />
               <span>Anthya Kriya</span>
             </Link>
-            <nav className="flex items-center gap-4 text-sm text-[color:oklch(0.28_0.08_20_/_85%)]">
+            <nav className="hidden sm:flex items-center gap-4 text-sm text-[color:oklch(0.28_0.08_20_/_85%)]">
               <Link href="/services" className="hover:underline">Services</Link>
               <Link href="/vendors-partners" className="hover:underline">Vendors & Partners</Link>
               <Link href="/about" className="hover:underline">About</Link>
@@ -145,7 +145,7 @@ export default function RootLayout({
                 Donate / Partner
               </Link>
               {/* Language toggle */}
-              <div className="ml-2 hidden sm:flex items-center gap-2" aria-label="Language selector">
+              <div className="ml-2 hidden md:flex items-center gap-2" aria-label="Language selector">
                 <Link className="hover:underline" href="?lang=en">EN</Link>
                 <span aria-hidden="true">|</span>
                 <Link className="hover:underline" href="?lang=te">TE</Link>
@@ -153,6 +153,18 @@ export default function RootLayout({
                 <Link className="hover:underline" href="?lang=hi">HI</Link>
               </div>
             </nav>
+            {/* Minimal mobile header actions */}
+            <div className="sm:hidden flex items-center gap-2 text-sm">
+              <a href="tel:+918886435558" className="rounded-full border px-3 py-1">Call</a>
+              <a
+                href="https://wa.me/918886435558?text=Hello%20Anthya%20Kriya%2C%20I%20need%20assistance"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="rounded-full bg-green-600 text-white px-3 py-1"
+              >
+                WhatsApp
+              </a>
+            </div>
           </div>
         </header>
         {children}
@@ -208,10 +220,18 @@ export default function RootLayout({
             </div>
           </div>
         </footer>
+        {/* Mobile sticky emergency bar */}
+        <div className="fixed inset-x-0 bottom-0 z-40 sm:hidden border-t bg-[var(--card)]/95 backdrop-blur supports-[backdrop-filter]:bg-[var(--card)]/80">
+          <div className="mx-auto max-w-6xl px-4 py-2 grid grid-cols-3 gap-2 text-sm">
+            <Link href="/emergency-booking" className="inline-flex items-center justify-center rounded-md bg-[var(--accent)] text-[var(--accent-foreground)] px-3 py-2">🚑 Emergency</Link>
+            <a href="tel:+918886435558" className="inline-flex items-center justify-center rounded-md border px-3 py-2">📞 Call</a>
+            <a href="https://wa.me/918886435558?text=Hello%20Anthya%20Kriya%2C%20I%20need%20assistance" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center rounded-md bg-green-600 text-white px-3 py-2">💬 WhatsApp</a>
+          </div>
+        </div>
         {/* Global floating Emergency CTA */}
         <Link
           href="/emergency-booking"
-          className="fixed bottom-4 right-4 z-50 inline-flex items-center gap-2 rounded-full bg-[var(--accent)] text-[var(--accent-foreground)] px-5 py-3 shadow-lg shadow-black/10 hover:opacity-90 focus-visible:outline focus-visible:outline-[var(--ring)]"
+          className="hidden sm:inline-flex fixed bottom-4 right-4 z-50 items-center gap-2 rounded-full bg-[var(--accent)] text-[var(--accent-foreground)] px-5 py-3 shadow-lg shadow-black/10 hover:opacity-90 focus-visible:outline focus-visible:outline-[var(--ring)]"
           aria-label="Book Emergency Now"
         >
           <span className="hidden sm:inline">Book Emergency Now</span>
@@ -222,7 +242,7 @@ export default function RootLayout({
           href="https://wa.me/918886435558?text=Hello%20Anthya%20Kriya%2C%20I%20need%20assistance"
           target="_blank"
           rel="noopener noreferrer"
-          className="fixed bottom-4 left-4 z-50 inline-flex items-center gap-2 rounded-full bg-green-600 text-white px-5 py-3 shadow-lg hover:bg-green-700 focus-visible:outline focus-visible:outline-[var(--ring)]"
+          className="hidden sm:inline-flex fixed bottom-4 left-4 z-50 items-center gap-2 rounded-full bg-green-600 text-white px-5 py-3 shadow-lg hover:bg-green-700 focus-visible:outline focus-visible:outline-[var(--ring)]"
           aria-label="Chat on WhatsApp"
         >
           WhatsApp
