@@ -7,6 +7,7 @@ import Script from "next/script";
 import Link from "next/link";
 import { Toaster } from "@/components/ui/sonner";
 import Image from "next/image";
+import MobileMenu from "@/components/MobileMenu";
 
 export const metadata: Metadata = {
   title: "Anthya Kriya — Dignity in the Final Journey",
@@ -154,66 +155,7 @@ export default function RootLayout({
               </div>
             </nav>
             {/* Minimal mobile header actions + menu */}
-            <div className="md:hidden flex items-center gap-2 text-sm">
-              <details className="relative">
-                <summary className="rounded-full border px-3 py-1 cursor-pointer select-none" aria-label="Open menu" aria-haspopup="menu" aria-controls="mobile-menu">Menu</summary>
-                <div id="mobile-menu" className="fixed inset-x-2 top-16 bottom-2 rounded-lg border bg-[var(--card)] p-4 shadow-lg z-[200] overflow-y-auto">
-                  <nav className="grid gap-2 text-[var(--foreground)]">
-                    {/* Primary actions */}
-                    <Link href="/emergency-booking" className="inline-flex items-center justify-center rounded-md bg-[var(--accent)] text-[var(--accent-foreground)] px-3 py-2">🚑 Emergency Booking</Link>
-                    <Link href="/plan-ahead" className="rounded-md border px-3 py-2">Plan Ahead</Link>
-                    <Link href="/multi-faith-rituals" className="rounded-md border px-3 py-2">Multi‑faith Rituals</Link>
-                    <Link href="/memorials" className="rounded-md border px-3 py-2">Memorials</Link>
-                    <Link href="/memorials/new" className="rounded-md border px-3 py-2">Create Memorial</Link>
-
-                    <div className="pt-2 border-t mt-2" />
-
-                    {/* Explore / informational */}
-                    <Link href="/services" className="hover:underline">Services</Link>
-                    <Link href="/vendors-partners" className="hover:underline">Vendors & Partners</Link>
-                    <Link href="/partner" className="hover:underline">Partner with Us</Link>
-                    <Link href="/vendor" className="hover:underline">Vendor Portal</Link>
-                    <Link href="/vendor/onboarding" className="hover:underline">Vendor Onboarding</Link>
-                    <Link href="/vendor/jobs" className="hover:underline">Vendor Jobs</Link>
-                    <Link href="/vendor/wallet" className="hover:underline">Vendor Wallet</Link>
-                    <Link href="/about" className="hover:underline">About</Link>
-                    <Link href="/contact" className="hover:underline">Contact</Link>
-                    <Link href="/csr" className="hover:underline">CSR</Link>
-
-                    <div className="pt-2 border-t mt-2" />
-
-                    {/* Auth */}
-                    <Link href="/login" className="hover:underline">Login</Link>
-                    <Link href="/register" className="hover:underline">Register</Link>
-
-                    <div className="pt-2 border-t mt-2" />
-
-                    {/* Policies */}
-                    <Link href="/legal" className="hover:underline">Legal</Link>
-                    <Link href="/terms" className="hover:underline">Terms</Link>
-                    <Link href="/privacy" className="hover:underline">Privacy</Link>
-
-                    <div className="pt-2 border-t mt-2" />
-
-                    {/* Language selector */}
-                    <div className="flex items-center gap-3" aria-label="Language selector">
-                      <Link className="hover:underline" href="?lang=en">EN</Link>
-                      <Link className="hover:underline" href="?lang=te">TE</Link>
-                      <Link className="hover:underline" href="?lang=hi">HI</Link>
-                    </div>
-                  </nav>
-                </div>
-              </details>
-              <a href="tel:+918886435558" className="rounded-full border px-3 py-1">Call</a>
-              <a
-                href="https://wa.me/918886435558?text=Hello%20Anthya%20Kriya%2C%20I%20need%20assistance"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="rounded-full bg-green-600 text-white px-3 py-1"
-              >
-                WhatsApp
-              </a>
-            </div>
+            <MobileMenu />
           </div>
         </header>
         {children}
